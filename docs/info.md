@@ -9,12 +9,24 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+Badly probably.  
+
+Use a positive edge detector on the clock and its compliment.  Or together those dectors to get 2 positive pulses per period or a 2x clock. 
+
 
 ## How to test
 
-Explain how to use your project
+data source = in[1] ? lfsr : in[0]
+clock source = in[2] ? clk : 2x clk
+
+If you don't want to align in[0] to clock just use internal LFSR to make symbols. Check you get a new symbol on every clock edge. 
+
+If you do want to use in[0] as data srouce:
+
+Use in[2]=1 to find phase alignment of in[0] to FF0 in LFSR
+
+From there use in[2]=0 and drive in[0] at alignment + 90 degrees out of phase with clock to try to grab data on every clock edge.  
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+None
