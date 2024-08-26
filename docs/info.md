@@ -29,4 +29,4 @@ From there use in[2]=0 and drive in[0] at alignment + 90 degrees out of phase wi
 
 ## External hardware
 
-None
+None.
